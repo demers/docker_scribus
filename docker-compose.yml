@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  scribus:
+    build: .
+    image: scribus
+    container_name: scribus_vimified
+    volumes:
+      - "data_work:/home/ubuntu/work"
+    #restart: always
+    ports:
+      - "22:22"
+    network_mode: "host"
+
+volumes:
+  data_work:
