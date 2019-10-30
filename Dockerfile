@@ -55,6 +55,9 @@ RUN apt-get -y install scribus-trunk scribus-ng
 #ENV QT_ACCESSIBILITY=0
 RUN echo "export QT_ACCESSIBILITY=0" >> ${WORKDIRECTORY}/.bash_profile
 
+# Ajout des droits sudoers
+RUN apt-get install -y sudo
+RUN echo "%ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 WORKDIR ${WORKDIRECTORY}
 
