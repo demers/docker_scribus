@@ -16,6 +16,8 @@ ENV WORKDIRECTORY /home/ubuntu
 
 RUN apt-get update
 
+RUN apt install -y apt-utils
+
 RUN apt-get install -y vim-nox curl git exuberant-ctags
 
 # Install a basic SSH server
@@ -90,6 +92,11 @@ RUN echo "cd ~/.vim/bundle/YouCompleteMe" >> ${WORKDIRECTORY}/.bash_profile
 RUN echo "./install.py --clang-completer" >> ${WORKDIRECTORY}/.bash_profile
 RUN echo "fi" >> ${WORKDIRECTORY}/.bash_profile
 RUN echo "cd ~/" >> ${WORKDIRECTORY}/.bash_profile
+
+RUN echo "export XDG_RUNTIME_DIR='/tmp/runtime-ubuntu'" >> ${WORKDIRECTORY}/.bash_profile
+RUN echo "export DISPLAY=:0.0" >> ${WORKDIRECTORY}/.bash_profile
+RUN echo "export XDG_RUNTIME_DIR='/tmp/runtime-ubuntu'" >> /root/.bash_profile
+RUN echo "export DISPLAY=:0.0" >> /root/.bash_profile
 
 RUN cd ${WORKDIRECTORY} \
     && mkdir work \

@@ -7,6 +7,7 @@ services:
     container_name: scribus_vimified
     volumes:
       - "data_work:/home/ubuntu/work"
+      - "/home/demers/scribus:/home/ubuntu/scribus"
     #restart: always
     ports:
       - "22:22"
