@@ -1,2 +1,2 @@
 # docker_scribus
-Scribus 1.5.4 sur Ubuntu 18.04
+Scribus sur Ubuntu 20.04

@@ -4,13 +4,13 @@ services:
   scribus:
     build: .
     image: scribus
-    container_name: scribus_vimified
+    container_name: scribus
     volumes:
       - "data_work:/home/ubuntu/work"
-      - "/home/demers/scribus:/home/ubuntu/scribus"
     #restart: always
     ports:
       - "22:22"
+      - "5901:5901"
     network_mode: "host"
 
 volumes:

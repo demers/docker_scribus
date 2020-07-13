@@ -1,0 +1,10 @@
+
+# Installation de Scribus 1.*
+RUN apt -y install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates
+RUN add-apt-repository ppa:scribus/ppa
+RUN apt-get -y update
+RUN apt-get -y install scribus-trunk scribus-ng
+
+#ENV QT_ACCESSIBILITY=0
+RUN echo "export QT_ACCESSIBILITY=0" >> ${WORKDIRECTORY}/.bash_profile
+
