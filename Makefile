@@ -18,6 +18,8 @@ create:
 remove:
 	rm -f ./after.vimrc
 	rm -f ./extra.vimrc
+	rm -f ./rc.conf
+	rm -f ./commands.py
 	rm -f Dockerfile
 
 
